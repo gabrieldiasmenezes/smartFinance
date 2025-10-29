@@ -1,16 +1,16 @@
 import color from "@/components/color"; 
 import { StyleSheet } from "react-native"; 
+
 const style = StyleSheet.create({ 
-    
     // Card principal 
     cardKpi: { 
         backgroundColor: color.background, 
-        borderColor:color.gray, 
-        borderWidth:1.5, 
+        borderColor: color.border, 
+        borderWidth: 1, 
         width: "90%", 
         borderRadius: 12, 
         padding: 16, 
-        marginVertical: 10,
+        marginVertical: 16,
         // 💥 Sombra para iOS 
         shadowColor: color.black, 
         shadowOffset: { width: 2, height: 4 }, 
@@ -40,8 +40,16 @@ const style = StyleSheet.create({
         fontSize: 28, 
         fontWeight: "700",
         color: color.text, 
-        marginBottom: 8, 
+        marginBottom: 4, 
     }, 
+
+    // Descrição do KPI
+    description: {
+        fontSize: 13,
+        fontWeight: "400",
+        color: color.gray,
+        marginBottom: 8,
+    },
     
     // Linha da tendência 
     trend: { 
@@ -50,8 +58,9 @@ const style = StyleSheet.create({
     }, 
     trendText: { 
         color: color.green, 
-        fontSize: 14, fontWeight: "500", 
-    }
+        fontSize: 14, 
+        fontWeight: "500", 
+    },
 });
 
 export default style;

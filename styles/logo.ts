@@ -2,7 +2,8 @@ import color from "@/components/color";
 import { StyleSheet } from "react-native"; 
 const style = StyleSheet.create({ 
     logoContainer:{
-        paddingVertical:20,
+        marginTop:50,
+        marginHorizontal:30,
         width:"100%",
         alignItems:"flex-start",
     },
