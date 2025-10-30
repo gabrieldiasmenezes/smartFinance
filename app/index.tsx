@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
 import Logo from "@/components/Logo";
 import Tabs from "./Navigation/Tabs";
-import color from "@/components/color";
 
 
 export default function Index() {
