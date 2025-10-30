@@ -1,29 +1,36 @@
-// src/components/LineChartLucro.style.ts
-import { StyleSheet } from "react-native";
+import color from "@/components/color"; 
+import { StyleSheet } from "react-native"; 
 
-export const style = StyleSheet.create({
-  card: {
-    backgroundColor: "#fff",
-    marginTop: 24,
-    marginHorizontal: 16,
-    borderRadius: 20,
-    paddingVertical: 20,
-    paddingHorizontal: 10,
+const style = StyleSheet.create({
+  container: {
+    borderColor: color.border,
+    marginBottom: 40,
+    borderWidth: 1,
+    width: "100%",
+    padding: 16,
+    borderRadius: 12,
     shadowColor: "#000",
-    shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.1,
-    shadowRadius: 6,
-    elevation: 4,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.12,
+    shadowRadius: 8,
+    elevation: 6,
+    backgroundColor: color.background,
   },
   title: {
-    fontSize: 18,
-    fontWeight: "600",
-    color: "#222",
-    marginBottom: 10,
-    textAlign: "center",
+    fontSize: 20,
+    fontWeight: "700",
+    color: color.text,
+    marginBottom: 12,
   },
   chart: {
-    borderRadius: 16,
-    alignSelf: "center",
+    borderRadius: 12,
+  },
+  subtitle: {
+    fontSize: 14,
+    color: "#555",
+    marginTop: 10,
+    textAlign: "center",
   },
 });
+
+export default style;

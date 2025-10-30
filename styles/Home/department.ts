@@ -1,42 +1,49 @@
-import { StyleSheet } from "react-native";
-
-export const style = StyleSheet.create({
-  container: {
-    marginHorizontal: 16,
-    marginVertical: 50,
-    width: "100%",
-    backgroundColor: "#fff",
-    padding: 16,
-    borderRadius: 16,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.1,
-    shadowRadius: 6,
-    elevation: 4,
-  },
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginBottom: 6,
-  },
-  label: {
-    fontSize: 14,
-    color: "#333",
-  },
-  barBackground: {
-    height: 10,
-    backgroundColor: "#E5E7EB",
-    borderRadius: 8,
-    overflow: "hidden",
-  },
-  barFill: {
-    height: 10,
-    borderRadius: 8,
-  },
-  value: {
-    fontSize: 14,
-    fontWeight: "600",
-    color: "#222",
-  },
+import color from "@/components/color"; 
+import { StyleSheet } from "react-native"; 
+const style = StyleSheet.create({  
+    departmentsContainer:{
+        borderColor:color.border,
+        marginBottom:40,
+        borderWidth:1,
+        width:"100%",
+        padding:16,
+        borderRadius:10,
+        shadowColor:color.black,
+        shadowOffset:{ width:0, height:10},
+        shadowOpacity:0.25,
+        shadowRadius:2,
+        elevation:8,
+        backgroundColor:color.background,  
+    },
+    title:{
+        fontSize:20,
+        fontWeight:"600"
+    },
+    subTitle:{
+        marginTop:2,
+        fontSize:15,
+        fontWeight:"500",
+        color:color.gray,
+    },
+    departmentContent:{
+        marginTop:20,
+    },
+    textContent:{
+        flexDirection:"row",
+        justifyContent:"space-between"
+    },
+    barBackground:{
+        backgroundColor:color.border,
+        height:15,
+        marginBottom:10,
+        marginTop:5,
+        borderRadius:50,
+    },
+    barFill:{
+        height:"100%",
+        borderRadius:50,
+        backgroundColor:color.green,
+    }
 });
+
+export default style;

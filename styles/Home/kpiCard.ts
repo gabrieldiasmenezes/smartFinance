@@ -1,66 +1,48 @@
 import color from "@/components/color"; 
 import { StyleSheet } from "react-native"; 
-
-const style = StyleSheet.create({ 
-    // Card principal 
-    cardKpi: { 
-        backgroundColor: color.background, 
-        borderColor: color.border, 
-        borderWidth: 1, 
-        width: "90%", 
-        borderRadius: 12, 
-        padding: 16, 
-        marginVertical: 16,
-        // 💥 Sombra para iOS 
-        shadowColor: color.black, 
-        shadowOffset: { width: 2, height: 4 }, 
-        shadowOpacity: 0.15, 
-        shadowRadius: 6, 
-        // 💥 Sombra para Android 
-        elevation: 5, 
-    }, 
-    
-    // Cabeçalho 
-    headerKpi: { 
-        flexDirection: "row", 
-        justifyContent: "space-between", 
-        alignItems: "center", 
-        marginBottom: 10, 
-    }, 
-    
-    // Título do KPI 
-    title: { 
-        fontSize: 16, 
-        fontWeight: "600", 
-        color: color.text, 
-    }, 
-    
-    // Valor principal 
-    value: { 
-        fontSize: 28, 
-        fontWeight: "700",
-        color: color.text, 
-        marginBottom: 4, 
-    }, 
-
-    // Descrição do KPI
-    description: {
-        fontSize: 13,
-        fontWeight: "400",
-        color: color.gray,
-        marginBottom: 8,
+const style = StyleSheet.create({  
+    kpiCard:{
+        borderColor:color.border,
+        marginBottom:40,
+        borderWidth:1,
+        width:"90%",
+        padding:16,
+        borderRadius:10,
+        shadowColor:color.black,
+        shadowOffset:{ width:0, height:10},
+        shadowOpacity:0.25,
+        shadowRadius:2,
+        elevation:8,
+        backgroundColor:color.background,
     },
-    
-    // Linha da tendência 
-    trend: { 
-        flexDirection: "row", 
-        alignItems: "center",
-    }, 
-    trendText: { 
-        color: color.green, 
-        fontSize: 14, 
-        fontWeight: "500", 
+    header:{
+        justifyContent:"space-between",
+        flexDirection:"row",
+        width:"100%",
     },
+    title:{
+        fontSize:16,
+        fontWeight:"500",
+        color:color.gray
+    },
+    text:{
+        fontSize:30,
+        fontWeight:"700",
+        paddingVertical:20,
+    },
+    footer:{
+        flexDirection:"row",
+    },
+    textFooter:{
+        fontWeight:"500",
+        color:color.green,
+        marginLeft:5,
+    },
+    descricao:{
+        fontWeight:"500",
+        color:color.gray,
+        marginTop:5,     
+    }
 });
 
 export default style;
