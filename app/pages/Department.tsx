@@ -13,6 +13,7 @@ export default function Departments(){
             <DepartmentCard/>
 
             <Insights insights={departmentInsights}/>
+            
             <View style={{ height: 80 }} />
         </ScrollView>
     )

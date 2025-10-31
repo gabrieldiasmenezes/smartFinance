@@ -13,13 +13,14 @@ import {
 
 
 export default function Chat() {
-  const [messages, setMessages] = useState<Message[]>([
+  const chatMessage:Message[]=[
     {
       id: 1,
       from: "bot",
       text: "Olá 👋 Sou sua assistente financeira! Como posso te ajudar hoje?",
     },
-  ]);
+  ]
+  const [messages, setMessages] = useState<Message[]>(chatMessage);
   const [input, setInput] = useState("");
 
   const sendMessage = () => handleSendMessage(input, setInput, setMessages);
@@ -31,11 +32,7 @@ export default function Chat() {
       keyboardVerticalOffset={Platform.OS === "ios" ? 90 : 70}
     >
       <ScrollView
-        contentContainerStyle={{
-          paddingBottom: 90,
-          paddingTop: 20,
-          paddingHorizontal: 20,
-        }}
+        contentContainerStyle={style.scrollContent}
         showsVerticalScrollIndicator={false}
       >
         <ChatMessages messages={messages} />

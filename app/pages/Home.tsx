@@ -15,12 +15,15 @@ export default function Home() {
     <ScrollView contentContainerStyle={[style.container, { paddingBottom: 60 }]}>
 
       <KpiCard/>
+      
       <ProfitChart/>
 
       <LineChartSection/>
 
       <DepartmentSection/>
+
       <Insights insights={homeInsights}/>
+
       <View style={{ height: 80 }} />
     </ScrollView>
   );

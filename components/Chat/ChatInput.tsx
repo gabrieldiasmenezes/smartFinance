@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import color from "@/components/color";
-import style from "@/styles/Chat/chat";
+import style from "@/styles/Chat/chatInput";
 
 type Props = {
   input: string;
