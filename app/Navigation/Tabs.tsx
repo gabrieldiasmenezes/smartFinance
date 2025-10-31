@@ -9,8 +9,8 @@ import Department from "../pages/Department";
 import Chat from "../pages/Chat";
 
 const tabs = [
-  { name: "Upload", label: "Upload", iconSet: Feather, icon: "upload", component: Upload },
   { name: "Home", label: "Home", iconSet: Ionicons, icon: "analytics-outline", component: Home },
+  { name: "Upload", label: "Upload", iconSet: Feather, icon: "upload", component: Upload },
   { name: "Department", label: "Departamento", iconSet: MaterialCommunityIcons, icon: "office-building-outline", component: Department },
   { name: "Chat", label: "Chat", iconSet: Ionicons, icon: "chatbubble-ellipses-outline", component: Chat },
 ];
