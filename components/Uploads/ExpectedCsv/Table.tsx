@@ -1,7 +1,6 @@
-import React from "react";
-import { View, Text } from "react-native";
-import color from "@/components/color";
 import style from "@/styles/Uploads/ExpectedCsv/table";
+import React from "react";
+import { Text, View } from "react-native";
 
 export default function Table() {
   const table = {

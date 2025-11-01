@@ -1,14 +1,17 @@
-import React, { useState } from "react";
-import { View, StyleSheet } from "react-native";
 import Logo from "@/components/Logo";
+import React, { useState } from "react";
+import { StyleSheet, View } from "react-native";
+import Toast from "react-native-toast-message";
 import Tabs from "./Navigation/Tabs";
-
 
 export default function Index() {
   const [activeScreen, setActiveScreen] = useState("Home");
 
   return (
     <View style={styles.container}>
+      {/*Tratamento de erros */}
+      <Toast />
+
       {/* Logo fixo */}
       <Logo />
 
@@ -24,6 +27,6 @@ export default function Index() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor:"transparent" },
+  container: { flex: 1, backgroundColor: "transparent" },
   screenContainer: { flex: 1 },
 });

@@ -1,9 +1,9 @@
-import { View, Text } from "react-native";
-import color from "../color";
+import style from "@/styles/Uploads/expectedCsv";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Text, View } from "react-native";
+import color from "../color";
 import Pipeline from "./ExpectedCsv/Pipeline";
 import Table from "./ExpectedCsv/Table";
-import style from "@/styles/Uploads/expectedCsv";
 
 export default function ExpectedCsv() {
   return (
