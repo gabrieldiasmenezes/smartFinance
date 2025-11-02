@@ -42,7 +42,8 @@
     "react-native-svg": "15.12.1",
     "react-native-toast-message": "^2.3.3",
     "react-native-web": "~0.21.0",
-    "react-native-worklets": "0.5.1"
+    "react-native-worklets": "0.5.1",
+    "remove-accents": "^0.5.0"
   },
   "devDependencies": {
     "@types/papaparse": "^5.3.16",
