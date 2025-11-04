@@ -2,13 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAI, getGenerativeModel, GoogleAIBackend } from "firebase/ai";
 const firebaseConfig = {
-  apiKey: "AIzaSyCTGXD3AMTOfeqgXCia6GVpd2SdLhrqFjg",
-  authDomain: "smartfinance-10645.firebaseapp.com",
-  projectId: "smartfinance-10645",
-  storageBucket: "smartfinance-10645.firebasestorage.app",
-  messagingSenderId: "766556511409",
-  appId: "1:766556511409:web:94d1ab6c7d8f2a5bd5d690",
-  measurementId: "G-SCS4W34N0V"
+  apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.EXPO_PUBLIC_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
