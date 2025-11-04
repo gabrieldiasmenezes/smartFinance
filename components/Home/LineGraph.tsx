@@ -2,15 +2,20 @@ import useTrimestres from "@/hooks/useTrimestres";
 import style from "@/styles/Home/lineChart";
 import { Dimensions } from "react-native";
 import { LineChart } from "react-native-chart-kit";
-import color from "../color";
 
 export default function LineGraph() {
-  const { trimestres } = useTrimestres();
+  const { trimestres, loading } = useTrimestres();
   const screenWidth = Dimensions.get("window").width - 64;
 
+  if (loading || !trimestres || trimestres.length === 0) return null;
+
   const labels = trimestres.map((t) => t.trimestre);
-  const receitaData = trimestres.map((t) => t.receita / 1_000_000);
-  const lucroData = trimestres.map((t) => t.lucro / 1_000_000);
+  const receitaData = trimestres.map((t) =>
+    Number.isFinite(t?.receita / 1_000_000) ? t.receita / 1_000_000 : 0
+  );
+  const lucroData = trimestres.map((t) =>
+    Number.isFinite(t?.lucro / 1_000_000) ? t.lucro / 1_000_000 : 0
+  );
 
   return (
     <LineChart
@@ -27,8 +32,6 @@ export default function LineGraph() {
       yAxisSuffix="M"
       fromZero
       withShadow
-      withInnerLines
-      withOuterLines={false}
       bezier
       chartConfig={{
         backgroundGradientFrom: "#ffffff",
@@ -37,11 +40,6 @@ export default function LineGraph() {
         color: (opacity = 1) => `rgba(50,50,50,${opacity})`,
         labelColor: (opacity = 0.7) => `rgba(80,80,80,${opacity})`,
         propsForDots: { r: "6", strokeWidth: "2", stroke: "#fff" },
-        propsForBackgroundLines: {
-          strokeWidth: 0.5,
-          strokeDasharray: "3",
-          stroke: color.border,
-        },
       }}
       style={style.chart}
     />

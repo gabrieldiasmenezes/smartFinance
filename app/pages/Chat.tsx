@@ -1,29 +1,36 @@
-// src/components/Chat/Chat.tsx
-import ChatInput from "@/components/Chat/ChatInput";
-import ChatMessages from "@/components/Chat/ChatMessages";
-import style from "@/styles/Chat/chat";
-import { Message } from "@/types/types";
-import { handleSendMessage } from "@/utils/Chat/chat";
 import React, { useState } from "react";
 import {
   KeyboardAvoidingView,
   ScrollView,
   Platform,
+  View,
+  Text,
 } from "react-native";
-
+import ChatInput from "@/components/Chat/ChatInput";
+import ChatMessages from "@/components/Chat/ChatMessages";
+import style from "@/styles/Chat/chat";
+import { Message } from "@/types/types";
+import { handleSendMessage } from "@/utils/Chat/chat"; // ✅ import correto
 
 export default function Chat() {
-  const chatMessage:Message[]=[
+  const initialMessages: Message[] = [
     {
       id: 1,
       from: "bot",
       text: "Olá 👋 Sou sua assistente financeira! Como posso te ajudar hoje?",
     },
-  ]
-  const [messages, setMessages] = useState<Message[]>(chatMessage);
-  const [input, setInput] = useState("");
+  ];
 
-  const sendMessage = () => handleSendMessage(input, setInput, setMessages);
+  const [messages, setMessages] = useState<Message[]>(initialMessages);
+  const [input, setInput] = useState("");
+  const [isTyping, setIsTyping] = useState(false); // 👈 estado para 'digitando...'
+
+  const sendMessage = async () => {
+    if (!input.trim()) return;
+    setIsTyping(true); // mostra o texto de "digitando..."
+    await handleSendMessage(input, setInput, setMessages);
+    setIsTyping(false);
+  };
 
   return (
     <KeyboardAvoidingView
@@ -36,6 +43,14 @@ export default function Chat() {
         showsVerticalScrollIndicator={false}
       >
         <ChatMessages messages={messages} />
+
+        {isTyping && (
+          <View style={{ alignSelf: "flex-start", marginLeft: 10, marginVertical: 6 }}>
+            <Text style={{ color: "#888", fontStyle: "italic" }}>
+              💬 Finance AI está digitando...
+            </Text>
+          </View>
+        )}
       </ScrollView>
 
       <ChatInput input={input} setInput={setInput} onSend={sendMessage} />

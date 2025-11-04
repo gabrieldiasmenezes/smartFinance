@@ -8,33 +8,45 @@ import { ActivityIndicator, Text, View } from "react-native";
 export default function KpiCard() {
   const { trimestres, loading } = useTrimestres();
 
-  if (loading) return <ActivityIndicator size="large" color={color.green} />
-;
+  if (loading) return <ActivityIndicator size="large" color={color.green} />;
 
   if (!trimestres || trimestres.length === 0) {
     return <Text style={{ textAlign: "center", marginTop: 20 }}>Nenhum dado disponível</Text>;
   }
 
-  // Calcula os totais somando os valores de todos os trimestres
+  // Função para formatar valores grandes
+  const formatValor = (valor: number) => {
+    if (valor >= 1e9) {
+      return `$${(valor / 1e9).toFixed(2)}B`; // Bilhões
+    } else if (valor >= 1e6) {
+      return `$${(valor / 1e6).toFixed(2)}M`; // Milhões
+    } else if (valor >= 1e3) {
+      return `$${(valor / 1e3).toFixed(2)}K`; // Milhares
+    } else {
+      return `$${valor.toFixed(2)}`;
+    }
+  };
+
+  // Calcula os totais
   const totalReceita = trimestres.reduce((acc, t) => acc + (t.receita || 0), 0);
   const totalDespesas = trimestres.reduce((acc, t) => acc + (t.despesa || 0), 0);
   const totalLucro = trimestres.reduce((acc, t) => acc + (t.lucro || 0), 0);
 
-  // Calcula margem de lucro média
+  // Margem de lucro média
   const margemLucro = totalReceita > 0 ? ((totalLucro / totalReceita) * 100).toFixed(1) : "0.0";
 
   const kpi = [
     {
       id: 1,
       titulo: "Receita Total",
-      valor: `$${(totalReceita / 1e6).toFixed(2)}M`,
+      valor: formatValor(totalReceita),
       variacao: "+7.5%",
       descricao: "Receita acumulada dos trimestres",
     },
     {
       id: 2,
       titulo: "Despesas Operacionais",
-      valor: `$${(totalDespesas / 1e6).toFixed(2)}M`,
+      valor: formatValor(totalDespesas),
       variacao: "+3.1%",
       descricao: "Despesas totais do período",
     },

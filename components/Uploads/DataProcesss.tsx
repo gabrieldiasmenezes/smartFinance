@@ -4,7 +4,7 @@ import color from "@/components/color";
 import style from "@/styles/Uploads/dataProcess";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { ScrollView, View, Text } from "react-native";
+import { View, Text } from "react-native";
 
 
 

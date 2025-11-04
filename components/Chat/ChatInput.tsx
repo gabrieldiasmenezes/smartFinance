@@ -1,10 +1,6 @@
 // src/components/Chat/ChatInput.tsx
 import React from "react";
-import {
-  View,
-  TextInput,
-  TouchableOpacity,
-} from "react-native";
+import { View, TextInput, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import color from "@/components/color";
 import style from "@/styles/Chat/chatInput";
@@ -23,7 +19,10 @@ export default function ChatInput({ input, setInput, onSend }: Props) {
         onChangeText={setInput}
         placeholder="Digite sua pergunta financeira..."
         placeholderTextColor={color.gray}
-        style={style.input}
+        style={[style.input, { flex: 1 }]}
+        multiline
+        numberOfLines={3}
+        textAlignVertical="top" // mantém o texto no topo
       />
 
       <TouchableOpacity onPress={onSend} style={style.sendButton}>

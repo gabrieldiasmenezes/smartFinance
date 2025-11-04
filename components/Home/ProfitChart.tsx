@@ -10,7 +10,10 @@ export default function ProfitChart() {
   const { trimestres } = useTrimestres();
 
   const labels = trimestres.map((t) => t.trimestre);
-  const data = trimestres.map((t) => t.lucro / 1_000_000);
+  const data = trimestres.map((t) =>
+  Number.isFinite(t?.lucro / 1_000_000) ? t.lucro / 1_000_000 : 0
+);
+
 
   return (
     <View style={style.container}>

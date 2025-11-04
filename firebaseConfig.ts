@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-
+import { getAI, getGenerativeModel, GoogleAIBackend } from "firebase/ai";
 const firebaseConfig = {
   apiKey: "AIzaSyCTGXD3AMTOfeqgXCia6GVpd2SdLhrqFjg",
   authDomain: "smartfinance-10645.firebaseapp.com",
@@ -13,6 +13,11 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+// Initialize the Gemini Developer API backend service
+const ai = getAI(app, { backend: new GoogleAIBackend() });
 
-export { db };
+// Create a `GenerativeModel` instance with a model that supports your use case
+const model = getGenerativeModel(ai, { model: "gemini-2.5-flash" });
+
+export { db,ai,model };
 
