@@ -59,9 +59,9 @@ Os dados extraídos são enviados e armazenados com segurança no **Firebase Fir
 Na tela principal, o usuário visualiza um **dashboard corporativo interativo**, com:
 
 **Cards de KPIs:**
-- Total de receitas por trimestre
-- Total de despesas por trimestre
-- Lucro líquido por trimestre
+- Total de receitas anual
+- Total de despesas anual
+- Lucro líquido anual
 
 **Gráficos Dinâmicos:**
 - Evolução trimestral de receita, despesa e lucro
@@ -214,31 +214,6 @@ npm run ios
 
 ---
 
-## 🗂️ Estrutura do Firestore
-
-Os dados são organizados por trimestres no Firebase Firestore:
-
-```
-trimestres/
-  ├── Q1/
-  │   ├── despesas: 543000000
-  │   ├── lucro: 182000000
-  │   ├── receita: 725000000
-  │   └── setores/
-  │       ├── engenharia: 36000000
-  │       ├── financeiro: 12600000
-  │       ├── operacoes_gerais: 20000000
-  │       ├── produtos: 42000000
-  │       ├── rh_e_talentos: 11500000
-  │       ├── suporte_e_cs: 16000000
-  │       └── vendas: 31000000
-  ├── Q2/
-  ├── Q3/
-  └── Q4/
-```
-
----
-
 ## 🧪 Exemplos de Prompts e Respostas Geradas
 
 ### Prompt interno da IA:
@@ -265,6 +240,33 @@ variações de lucro, despesas e alocação orçamentária por departamento."
 
 **Resposta:**
 > *"O departamento de Engenharia teve orçamento de R$ 36 milhões no Q1. Verificando os dados do Q2..."*
+
+---
+
+## 🧱 Estrutura do Projeto
+
+```
+/smartfinance
+├── src
+│   ├── components
+│   │   ├── Dashboard.js
+│   │   ├── KPICards.js
+│   │   ├── DepartmentBudget.js
+│   │   ├── Chatbot.js
+│   │   └── UploadCSV.js
+│   ├── services
+│   │   ├── firebaseConfig.js
+│   │   ├── aiLogicService.js
+│   │   └── firestoreService.js
+│   ├── screens
+│   │   ├── HomeScreen.js
+│   │   └── InsightsScreen.js
+│   └── assets
+│       └── icons/
+├── .env.example
+├── package.json
+└── README.md
+```
 
 ---
 
