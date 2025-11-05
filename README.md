@@ -171,9 +171,6 @@ cd smartfinance
 # Instale o Expo
 npm install expo
 
-# Instale as dependências do projeto
-npm install
-
 # Atualize os pacotes para evitar possíveis erros de compatibilidade
 npx expo install --fix
 ```
