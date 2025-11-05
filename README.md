@@ -1,6 +1,6 @@
 # SmartFinance 💰
 
-### Análise Financeira Inteligente com IA Generativa
+### Análise Financeira Corporativa Inteligente com IA Generativa
 
 [![FIAP](https://img.shields.io/badge/FIAP-2025-red)](https://www.fiap.com.br)
 [![Firebase](https://img.shields.io/badge/Firebase-AI%20Logic-orange)](https://firebase.google.com)
@@ -12,9 +12,9 @@
 
 ## 🧭 Visão Geral
 
-O **SmartFinance** é um aplicativo mobile inteligente que ajuda o usuário a entender e controlar suas finanças pessoais de forma automatizada, utilizando **Inteligência Artificial Generativa** integrada ao **Firebase AI Logic** (com o modelo **Gemini 2.5 Flash**).
+O **SmartFinance** é um aplicativo mobile inteligente que transforma planilhas corporativas complexas em dashboards interativos e intuitivos, utilizando **Inteligência Artificial Generativa** integrada ao **Firebase AI Logic** (com o modelo **Gemini 2.5 Flash**).
 
-Em vez de preencher planilhas manualmente, o usuário faz upload de um arquivo CSV com seus gastos — e a IA faz o restante: **analisa os dados**, **identifica padrões**, **gera insights personalizados** e até **responde perguntas financeiras** em linguagem natural.
+Em vez de analisar planilhas manualmente, o usuário faz upload de um arquivo CSV com dados financeiros trimestrais da empresa — e a IA faz o restante: **processa os dados**, **gera visualizações interativas**, **cria cards de KPIs**, **divide orçamentos por departamento** e até **responde perguntas financeiras** em linguagem natural.
 
 ---
 
@@ -22,11 +22,14 @@ Em vez de preencher planilhas manualmente, o usuário faz upload de um arquivo C
 
 Desenvolver um aplicativo mobile funcional capaz de:
 
-- 📷 Capturar e processar arquivos CSV de despesas
-- 🧠 Utilizar Firebase AI Logic (Gemini 2.5 Flash) para extrair e interpretar informações financeiras
-- 💾 Armazenar os dados processados no Firebase Firestore
-- 💬 Gerar insights financeiros personalizados e respostas em linguagem natural
-- 📊 Exibir gráficos e relatórios interativos
+- 📷 Capturar e processar arquivos CSV de dados financeiros corporativos
+- 🧠 Utilizar Firebase AI Logic (Gemini 2.5 Flash) para extrair e interpretar informações financeiras trimestrais
+- 💾 Armazenar os dados processados no Firebase Firestore organizados por trimestres
+- 📊 Transformar planilhas em dashboards interativos com:
+  - **Cards de KPIs** (receita, despesa, lucro)
+  - **Gráficos dinâmicos** por trimestre
+  - **Divisão de orçamento por departamento** (Engenharia, Financeiro, Operações Gerais, Produtos, RH e Talentos, Suporte e CS, Vendas)
+- 💬 Gerar insights financeiros corporativos e respostas em linguagem natural
 - 🤖 Integrar um chatbot financeiro baseado em IA generativa
 
 ---
@@ -34,40 +37,60 @@ Desenvolver um aplicativo mobile funcional capaz de:
 ## ⚙️ Como o App Funciona
 
 ### 🔹 1. Upload do Arquivo
-O usuário faz upload de um arquivo CSV contendo transações financeiras (como um extrato bancário ou planilha de despesas).
+O usuário faz upload de um arquivo CSV contendo dados financeiros corporativos organizados por trimestres (Q1, Q2, Q3, Q4).
 
-### 🔹 2. Extração e Processamento
-O **Firebase AI Logic (Gemini 2.5 Flash)** analisa o conteúdo do arquivo e identifica:
-- Data da transação
-- Descrição da despesa
-- Categoria (alimentação, transporte, lazer etc.)
-- Valor gasto
+### 🔹 2. Extração e Processamento de Dados Trimestrais
+O **Firebase AI Logic (Gemini 2.5 Flash)** analisa o conteúdo do arquivo e extrai dados trimestrais:
+- **Receita** do trimestre
+- **Despesas** do trimestre
+- **Lucro** do trimestre
+- **Orçamento por departamento**:
+  - Engenharia
+  - Financeiro
+  - Operações Gerais
+  - Produtos
+  - RH e Talentos
+  - Suporte e CS
+  - Vendas
 
-Os dados extraídos são enviados e armazenados com segurança no **Firebase Firestore**.
+Os dados extraídos são enviados e armazenados com segurança no **Firebase Firestore**, organizados por trimestre (Q1, Q2, Q3, Q4).
 
-### 🔹 3. Visualização dos Dados
-Na tela principal, o usuário visualiza um **dashboard interativo**, com:
-- Total de receitas e despesas
-- Gastos por categoria
-- Comparativos entre meses
-- Gráficos dinâmicos e coloridos
+### 🔹 3. Visualização em Dashboard Interativo
+Na tela principal, o usuário visualiza um **dashboard corporativo interativo**, com:
+
+**Cards de KPIs:**
+- Total de receitas por trimestre
+- Total de despesas por trimestre
+- Lucro líquido por trimestre
+
+**Gráficos Dinâmicos:**
+- Evolução trimestral de receita, despesa e lucro
+- Comparativo entre trimestres
+- Distribuição de orçamento por departamento
+
+**Divisão Departamental:**
+- Visualização clara do orçamento alocado para cada departamento em cada trimestre
 
 ### 🔹 4. Geração de Insights com IA
-A IA interpreta os dados e gera textos explicativos como:
+A IA interpreta os dados corporativos e gera análises como:
 
-> *"Seus gastos com alimentação aumentaram 12% em relação ao mês anterior."*
+> *"O lucro do Q2 aumentou 15% em relação ao Q1, impulsionado pela redução de 8% nas despesas operacionais."*
+
+> *"O departamento de Vendas teve o maior orçamento alocado no Q3, representando 23% do total."*
 
 Esses insights são criados automaticamente pelo **Gemini 2.5 Flash**, utilizando **Firebase AI Logic Chat APIs**.
 
-### 🔹 5. O usuário pode conversar com o assistente financeiro integrado ao app, perguntando:
+### 🔹 5. Chatbot Financeiro Corporativo
+O usuário pode conversar com o assistente financeiro integrado ao app, perguntando:
+- *"Qual foi o lucro do Q2?"*
+- *"Quanto foi alocado para o departamento de Engenharia no primeiro trimestre?"*
+- *"Qual trimestre teve a maior receita?"*
+- *"Compare as despesas entre Q1 e Q3"*
 
-"Quanto gastei com lazer neste mês?"
-"Qual foi minha categoria mais cara no último trimestre?"
-
-A IA responde em tempo real com base nos dados armazenados.
+A IA responde em tempo real com base nos dados armazenados no Firestore.
 
 ### 🔹 6. Alertas Inteligentes (Feature Extra)
-O app envia **notificações automáticas** quando o usuário ultrapassa um limite médio de gastos em determinada categoria.
+O app envia **notificações automáticas** quando há variações significativas nos KPIs ou quando um departamento ultrapassa o orçamento previsto.
 
 ---
 
@@ -75,7 +98,7 @@ O app envia **notificações automáticas** quando o usuário ultrapassa um limi
 
 | Dimensão | Descrição |
 |----------|-----------|
-| **No Aplicativo** | O Firebase AI Logic com o modelo Gemini 2.5 Flash interpreta os dados financeiros, gera relatórios em linguagem natural e responde perguntas via chatbot. |
+| **No Aplicativo** | O Firebase AI Logic com o modelo Gemini 2.5 Flash interpreta os dados financeiros trimestrais, transforma planilhas em dashboards interativos, gera relatórios em linguagem natural e responde perguntas via chatbot. |
 | **No Desenvolvimento** | O GitHub Copilot foi usado dentro do VS Code para auxiliar na escrita de código, refatoração e geração de trechos integrando o Firebase. |
 
 ---
@@ -84,17 +107,19 @@ O app envia **notificações automáticas** quando o usuário ultrapassa um limi
 
 ```
 [Usuário] 
-   ↓ Upload do arquivo CSV
+   ↓ Upload do arquivo CSV (dados trimestrais)
 [App React Native]
    ↓ Envia arquivo ao Firebase Storage
 [Firebase AI Logic - Gemini 2.5 Flash]
-   ↓ Extrai e interpreta dados do arquivo
-[Firestore Database]
-   ↓ Armazena transações processadas
-[Dashboard + Chatbot]
-   ↓ Exibe insights e respostas personalizadas
+   ↓ Extrai dados: receita, despesa, lucro e orçamento por departamento
+[Firestore Database - Estrutura Trimestral]
+   ↓ Armazena dados organizados por Q1, Q2, Q3, Q4
+[Dashboard Interativo]
+   ↓ Gera Cards de KPIs + Gráficos + Divisão Departamental
+[Chatbot Financeiro]
+   ↓ Responde perguntas sobre dados corporativos
 [Usuário]
-   ← Recebe relatórios e alertas de gastos
+   ← Visualiza insights, KPIs e análises trimestrais
 ```
 
 ---
@@ -104,22 +129,25 @@ O app envia **notificações automáticas** quando o usuário ultrapassa um limi
 | Tecnologia | Função |
 |------------|--------|
 | **React Native** | Desenvolvimento do app mobile |
-| **Firebase Firestore** | Banco de dados na nuvem |
+| **Firebase Firestore** | Banco de dados na nuvem (estrutura trimestral) |
 | **Firebase Storage** | Armazenamento dos arquivos CSV |
-| **Firebase AI Logic (Gemini 2.5 Flash)** | Extração e análise de dados + geração de insights |
+| **Firebase AI Logic (Gemini 2.5 Flash)** | Extração e análise de dados trimestrais + geração de insights |
 | **GitHub Copilot + VS Code** | Desenvolvimento assistido por IA |
-| **Chart.js / Recharts** | Visualização gráfica dos gastos |
+| **Chart.js / Recharts** | Visualização gráfica dos dados financeiros |
 
 ---
 
 ## 🧩 Principais Funcionalidades
 
-✅ Upload e leitura de arquivos CSV  
-✅ Extração automática de informações com IA  
-✅ Dashboard financeiro com gráficos interativos  
-✅ Geração de insights e comparativos automáticos  
+✅ Upload e leitura de arquivos CSV corporativos  
+✅ Extração automática de dados trimestrais com IA  
+✅ Dashboard financeiro com cards de KPIs interativos  
+✅ Gráficos dinâmicos de evolução trimestral  
+✅ Divisão de orçamento por departamento  
+✅ Comparativo entre trimestres (Q1, Q2, Q3, Q4)  
+✅ Geração de insights corporativos automáticos  
 ✅ Chatbot financeiro com IA generativa  
-✅ Notificações inteligentes (alertas de gastos)
+✅ Notificações inteligentes (alertas de variações e orçamento)
 
 ---
 
@@ -135,13 +163,19 @@ O app envia **notificações automáticas** quando o usuário ultrapassa um limi
 
 ```bash
 # Clone o repositório
-git clone ttps://github.com/gabrieldiasmenezes/smartFinance
+git clone https://github.com/gabrieldiasmenezes/smartFinance
 
 # Entre na pasta do projeto
 cd smartfinance
 
-# Instale as dependências
+# Instale o Expo
+npm install expo
+
+# Instale as dependências do projeto
 npm install
+
+# Atualize os pacotes para evitar possíveis erros de compatibilidade
+npx expo install --fix
 ```
 
 ### 🧩 Variáveis de Ambiente
@@ -180,49 +214,57 @@ npm run ios
 
 ---
 
+## 🗂️ Estrutura do Firestore
+
+Os dados são organizados por trimestres no Firebase Firestore:
+
+```
+trimestres/
+  ├── Q1/
+  │   ├── despesas: 543000000
+  │   ├── lucro: 182000000
+  │   ├── receita: 725000000
+  │   └── setores/
+  │       ├── engenharia: 36000000
+  │       ├── financeiro: 12600000
+  │       ├── operacoes_gerais: 20000000
+  │       ├── produtos: 42000000
+  │       ├── rh_e_talentos: 11500000
+  │       ├── suporte_e_cs: 16000000
+  │       └── vendas: 31000000
+  ├── Q2/
+  ├── Q3/
+  └── Q4/
+```
+
+---
+
 ## 🧪 Exemplos de Prompts e Respostas Geradas
 
 ### Prompt interno da IA:
 ```
-"Analise o histórico de gastos do usuário e gere um resumo em linguagem 
-natural destacando aumentos ou reduções de despesas por categoria."
+"Analise os dados trimestrais e gere um resumo executivo destacando 
+variações de lucro, despesas e alocação orçamentária por departamento."
 ```
 
 **Resposta gerada:**
-> *"Você aumentou seus gastos em transporte em 8% este mês. Considere usar mais transporte público para economizar."*
+> *"O Q2 apresentou crescimento de 15% no lucro em relação ao Q1. As despesas operacionais foram reduzidas em 8%, enquanto o departamento de Vendas recebeu a maior alocação orçamentária, com R$ 31 milhões."*
 
 ### Prompt do Chatbot:
 ```
-"Quanto gastei com alimentação este mês?"
+"Qual foi o desempenho financeiro do primeiro trimestre?"
 ```
 
 **Resposta:**
-> *"Você gastou R$ 720,00 em alimentação em outubro, representando 28% do total das suas despesas."*
+> *"No Q1, a empresa registrou receita de R$ 725 milhões, despesas de R$ 543 milhões e lucro líquido de R$ 182 milhões. O departamento de Produtos teve a maior alocação orçamentária com R$ 42 milhões."*
 
----
-
-## 🧱 Estrutura do Projeto
-
+### Prompt do Chatbot:
 ```
-/smartreceipts
-├── src
-│   ├── components
-│   │   ├── Dashboard.js
-│   │   ├── Chatbot.js
-│   │   └── UploadCSV.js
-│   ├── services
-│   │   ├── firebaseConfig.js
-│   │   ├── aiLogicService.js
-│   │   └── firestoreService.js
-│   ├── screens
-│   │   ├── HomeScreen.js
-│   │   └── InsightsScreen.js
-│   └── assets
-│       └── icons/
-├── .env.example
-├── package.json
-└── README.md
+"Compare o orçamento de Engenharia entre Q1 e Q2"
 ```
+
+**Resposta:**
+> *"O departamento de Engenharia teve orçamento de R$ 36 milhões no Q1. Verificando os dados do Q2..."*
 
 ---
 
@@ -232,10 +274,13 @@ natural destacando aumentos ou reduções de despesas por categoria."
 2. Integração com Firebase Storage e Firestore
 3. Implementação do upload e leitura de CSV
 4. Conexão com o Firebase AI Logic (Gemini 2.5 Flash)
-5. Criação do dashboard com gráficos
-6. Desenvolvimento do chatbot financeiro
-7. Geração de insights automáticos
-8. Testes e ajustes finais
+5. Criação da estrutura trimestral no Firestore
+6. Desenvolvimento de cards de KPIs
+7. Criação de gráficos dinâmicos por trimestre
+8. Implementação da divisão de orçamento por departamento
+9. Desenvolvimento do chatbot financeiro corporativo
+10. Geração de insights automáticos
+11. Testes e ajustes finais
 
 ---
 
