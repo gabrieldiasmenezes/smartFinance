@@ -59,7 +59,7 @@ A IA interpreta os dados e gera textos explicativos como:
 
 Esses insights são criados automaticamente pelo **Gemini 2.5 Flash**, utilizando **Firebase AI Logic Chat APIs**.
 
-### O usuário pode conversar com o assistente financeiro integrado ao app, perguntando:
+### 🔹 5. O usuário pode conversar com o assistente financeiro integrado ao app, perguntando:
 
 "Quanto gastei com lazer neste mês?"
 "Qual foi minha categoria mais cara no último trimestre?"
